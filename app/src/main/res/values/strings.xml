@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Maggot</string>
+    <string name="welcome_to_mr_maggot">Welcome to Mr. Maggot</string>
+    <string name="smart_feeder">Smart Feeder</string>
+    <string name="cek_suhu">Cek Suhu</string>
+    <string name="pengering">Pengering</string>
+    <string name="about">About</string>
+    <string name="copyright_tgs_app">Copyright TGS App</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="logo">Logo</string>
+    <string name="mr_maggot">Mr. Maggot</string>
+    <string name="about_description"><![CDATA[Mr. Maggot merupakan sebuah aplikasi android yang dikembangkan untuk membantu proses budidaya Maggot BSF.  "\n \n"Mr. Maggot dilengkapi dengan fitur cek kondisi suhu dan kelembaban, jadwal makan, serta pengeringan maggot otomatis.]]></string>
+    <string name="ruang_budidaya">Ruang Budidaya</string>
+    <string name="box_maggot_bsf">Box Maggot BSF</string>
+    <string name="suhu_description"><![CDATA[Parameter suhu dan kelembaban  budidaya Maggot BSF \n\nBatas suhu 24℃ - 36℃ \nBatas kelembaban 60% - 70%]]></string>
+</resources>
