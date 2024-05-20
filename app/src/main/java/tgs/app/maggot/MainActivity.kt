@@ -24,12 +24,24 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.cardAbout.setOnClickListener{
-            startActivity(Intent(this@MainActivity, AboutActivity::class.java))
+        binding.btnNotif.setOnClickListener {
+            startActivity(Intent(this@MainActivity, NotifikasiActivity::class.java))
+        }
+
+        binding.cardSf.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SmartFeederActivity::class.java))
         }
 
         binding.cardSuhu.setOnClickListener{
             startActivity(Intent(this@MainActivity, CekSuhuActivity::class.java))
+        }
+
+        binding.cardPengering.setOnClickListener {
+            startActivity(Intent(this@MainActivity, PengeringActivity::class.java))
+        }
+
+        binding.cardAbout.setOnClickListener{
+            startActivity(Intent(this@MainActivity, AboutActivity::class.java))
         }
     }
 }

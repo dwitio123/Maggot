@@ -1,19 +1,19 @@
 package tgs.app.maggot
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import tgs.app.maggot.databinding.ActivityCekSuhuBinding
+import tgs.app.maggot.databinding.ActivityTemperatureBinding
 
-class CekSuhuActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityCekSuhuBinding
+class TemperatureActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityTemperatureBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityCekSuhuBinding.inflate(layoutInflater)
+        binding = ActivityTemperatureBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -23,14 +23,6 @@ class CekSuhuActivity : AppCompatActivity() {
 
         binding.btnBack.setOnClickListener {
             finish()
-        }
-
-        binding.ruangBudidaya.setOnClickListener {
-            startActivity(Intent(this, TemperatureActivity::class.java))
-        }
-
-        binding.boxMaggot.setOnClickListener {
-            startActivity(Intent(this, TemperatureActivity::class.java))
         }
     }
 }

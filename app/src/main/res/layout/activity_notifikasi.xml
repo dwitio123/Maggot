@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CekSuhuActivity"
+    tools:context=".NotifikasiActivity"
     android:background="@color/primary">
 
     <ImageView
@@ -24,51 +24,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Cek Suhu"
+        android:text="Notifikasi"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/btn_back"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/ruang_budidaya"
-        android:layout_width="280dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/card_green"
-        android:elevation="20dp"
-        android:gravity="center"
-        android:text="@string/ruang_budidaya"
-        android:textSize="16sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/box_maggot"
-        android:layout_width="280dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/card_green"
-        android:elevation="20dp"
-        android:gravity="center"
-        android:text="@string/box_maggot_bsf"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ruang_budidaya" />
-
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/card_green"
-        android:gravity="center"
-        android:text="@string/suhu_description"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/box_maggot" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

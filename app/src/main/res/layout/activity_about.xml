@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,23 +8,55 @@
     tools:context=".AboutActivity"
     android:background="@color/primary">
 
-    <TextView
+    <ImageView
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_about"
-        android:justificationMode="inter_word"
-        android:text="@string/about_description"
-        android:textSize="18sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/maggot"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:background="@drawable/bg_choco"
-        android:src="@drawable/cacing"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="24dp"/>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="About Mr. Maggot"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/bg_about"
+            android:justificationMode="inter_word"
+            android:text="@string/about_description"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/maggot"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_choco"
+            android:src="@drawable/cacing" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
