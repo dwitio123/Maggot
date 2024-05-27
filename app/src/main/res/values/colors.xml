@@ -5,4 +5,6 @@
     <color name="primary">#AFD198</color>
     <color name="green">#E8EFCF</color>
     <color name="choco">#ECCA9C</color>
+    <color name="btnON">#A1DD70</color>
+    <color name="btnOFF">#EE4E4E</color>
 </resources>

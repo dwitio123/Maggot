@@ -26,11 +26,11 @@ class CekSuhuActivity : AppCompatActivity() {
         }
 
         binding.ruangBudidaya.setOnClickListener {
-            startActivity(Intent(this, TemperatureActivity::class.java))
+            startActivity(Intent(this, RuangBudidayaActivity::class.java))
         }
 
         binding.boxMaggot.setOnClickListener {
-            startActivity(Intent(this, TemperatureActivity::class.java))
+            startActivity(Intent(this, BoxMaggotActivity::class.java))
         }
     }
 }

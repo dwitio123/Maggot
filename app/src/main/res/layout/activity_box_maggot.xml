@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TemperatureActivity"
+    tools:context=".BoxMaggotActivity"
     android:background="@color/primary">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Ruang Budidaya"
+        android:text="Box Maggot BSF"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"

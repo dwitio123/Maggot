@@ -36,7 +36,7 @@
         android:layout_width="280dp"
         android:layout_height="130dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/card_green"
+        android:background="@drawable/bg_btn_off"
         android:elevation="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
             android:src="@drawable/ic_power" />
 
         <TextView
