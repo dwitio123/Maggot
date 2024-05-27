@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "246119017635",
+    "project_id": "maggot-aefeb",
+    "storage_bucket": "maggot-aefeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246119017635:android:62f6d0a34a2dceed6c6316",
+        "android_client_info": {
+          "package_name": "tgs.app.maggot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArWTAKYT4vL-cnfycLbBnCtdzOZolZ6WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
