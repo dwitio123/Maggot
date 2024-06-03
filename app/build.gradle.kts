@@ -53,5 +53,6 @@ dependencies {
 
     implementation(libs.androidx.core.splashscreen)
     implementation(platform(libs.firebase.bom))
-    implementation("com.google.firebase:firebase-database")
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.messaging)
 }
