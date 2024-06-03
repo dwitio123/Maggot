@@ -1,15 +1,17 @@
 package tgs.app.maggot
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import tgs.app.maggot.databinding.ActivityPengeringBinding
 
 class PengeringActivity : AppCompatActivity() {
@@ -32,14 +34,25 @@ class PengeringActivity : AppCompatActivity() {
         }
 
         database = FirebaseDatabase.getInstance().reference
-        database.child("Pengering").get().addOnSuccessListener {
+
+        database.child("pengering").child("pengering").get().addOnSuccessListener {
             isOn = it.getValue(Boolean::class.java) ?: false
             updateButton()
         }
 
+        database.child("pengering").child("status").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val status = snapshot.getValue(String::class.java)
+                binding.tvStatus.text = status
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@PengeringActivity, error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
+
         binding.btnPengering.setOnClickListener {
             isOn = !isOn
-            database.child("Pengering").setValue(isOn)
+            database.child("pengering").child("pengering").setValue(isOn)
             updateButton()
             Toast.makeText(this, if (isOn) "Pengering : ON" else "Pengering : OFF", Toast.LENGTH_SHORT).show()
         }

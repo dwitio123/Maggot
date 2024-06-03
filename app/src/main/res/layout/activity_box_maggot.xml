@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvSuhu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -80,18 +80,18 @@
         android:layout_height="wrap_content"
         android:text="°C"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvSuhu"
+        app:layout_constraintStart_toEndOf="@+id/tvSuhu"
+        app:layout_constraintTop_toTopOf="@+id/tvSuhu" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvKelembaban"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="64sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/tvSuhu"
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <TextView
@@ -99,9 +99,9 @@
         android:layout_height="wrap_content"
         android:text="%"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvKelembaban"
+        app:layout_constraintStart_toEndOf="@+id/tvKelembaban"
+        app:layout_constraintTop_toTopOf="@+id/tvKelembaban" />
 
     <LinearLayout
         android:id="@+id/btn_kipas"

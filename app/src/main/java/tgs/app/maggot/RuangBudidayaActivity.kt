@@ -7,8 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import tgs.app.maggot.databinding.ActivityRuangBudidayaBinding
 
 class RuangBudidayaActivity : AppCompatActivity() {
@@ -31,14 +34,35 @@ class RuangBudidayaActivity : AppCompatActivity() {
         }
 
         database = FirebaseDatabase.getInstance().reference
-        database.child("KipasRuangBudidaya").get().addOnSuccessListener {
+
+        database.child("ruangBudidaya").child("suhu").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val suhu = snapshot.getValue(Int::class.java) ?: 0
+                binding.tvSuhu.text = suhu.toString()
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@RuangBudidayaActivity, error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        database.child("ruangBudidaya").child("kelembaban").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val kelembaban = snapshot.getValue(Int::class.java) ?: 0
+                binding.tvKelembaban.text = kelembaban.toString()
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@RuangBudidayaActivity, error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        database.child("ruangBudidaya").child("kipas").get().addOnSuccessListener {
             isOn = it.getValue(Boolean::class.java) ?: false
             updateButton()
         }
 
         binding.btnKipas.setOnClickListener {
             isOn = !isOn
-            database.child("KipasRuangBudidaya").setValue(isOn)
+            database.child("ruangBudidaya").child("kipas").setValue(isOn)
             updateButton()
             Toast.makeText(this, if (isOn) "Kipas : ON" else "Kipas : OFF", Toast.LENGTH_SHORT).show()
         }
