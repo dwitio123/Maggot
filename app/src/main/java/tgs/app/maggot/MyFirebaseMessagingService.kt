@@ -19,9 +19,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
-        remoteMessage.data.isNotEmpty().let {
-            val message = remoteMessage.data["message"] ?: "No message found"
-            sendNotification(message)
+        Log.d("MyFirebaseMessageService", "From: ${remoteMessage.from}")
+
+        remoteMessage.notification?.let {
+            Log.d("MyFirebaseMessageService", "Message Notification Title: ${it.title}")
+            Log.d("MyFirebaseMessageService", "Message Notification Body: ${it.body}")
+            sendNotification(it.body ?: "No message found")
         }
     }
 
@@ -35,7 +38,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         val channelId = "maggot_channel"
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(R.drawable.ic_notification)
-            .setContentTitle("Mr. Maggot")
+            .setContentTitle("Peringatan")
             .setContentText(message)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
