@@ -13,4 +13,18 @@
     <string name="ruang_budidaya">Ruang Budidaya</string>
     <string name="box_maggot_bsf">Box Maggot BSF</string>
     <string name="suhu_description"><![CDATA[Parameter suhu dan kelembaban  budidaya Maggot BSF \n\nBatas suhu 24℃ - 36℃ \nBatas kelembaban 60% - 70%]]></string>
+    <string name="about_mr_maggot">About Mr. Maggot</string>
+    <string name="zero">0</string>
+    <string name="celcius">°C</string>
+    <string name="percent">%</string>
+    <string name="kipas">Kipas</string>
+    <string name="status_kondisi">Status kondisi</string>
+    <string name="suhu_dan_kelembaban_aman">Suhu dan kelembaban aman</string>
+    <string name="kipas_tidak_menyala">Kipas tidak menyala</string>
+    <string name="pengering_maggot">Pengering Maggot</string>
+    <string name="proses_pengeringan">Proses pengeringan</string>
+    <string name="cadangan_makanan">Cadangan makanan</string>
+    <string name="makanan_telah_diberikan">Makanan telah diberikan</string>
+    <string name="terdeteksi_pergerakan_hama">Terdeteksi pergerakan hama</string>
+    <string name="_20_mei_2024">20 Mei 2024</string>
 </resources>

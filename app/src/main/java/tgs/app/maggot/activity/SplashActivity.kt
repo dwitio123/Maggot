@@ -1,36 +1,38 @@
-package tgs.app.maggot
+package tgs.app.maggot.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import tgs.app.maggot.databinding.ActivityCekSuhuBinding
+import tgs.app.maggot.R
 
-class CekSuhuActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityCekSuhuBinding
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityCekSuhuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_splash)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        binding.btnBack.setOnClickListener {
-            finish()
+        val background = object : Thread(){
+            override fun run(){
+                try {
+                    sleep(3000)
+                    val intent = Intent(baseContext, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } catch (e: Exception){
+                    e.printStackTrace()
+                }
+            }
         }
-
-        binding.ruangBudidaya.setOnClickListener {
-            startActivity(Intent(this, RuangBudidayaActivity::class.java))
-        }
-
-        binding.boxMaggot.setOnClickListener {
-            startActivity(Intent(this, BoxMaggotActivity::class.java))
-        }
+        background.start()
     }
 }

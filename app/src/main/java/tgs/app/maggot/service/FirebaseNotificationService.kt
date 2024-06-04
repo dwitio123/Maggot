@@ -1,4 +1,4 @@
-package tgs.app.maggot
+package tgs.app.maggot.service
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -9,8 +9,16 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import tgs.app.maggot.database.DatabaseProvider
+import tgs.app.maggot.R
+import tgs.app.maggot.activity.SmartFeederActivity
+import tgs.app.maggot.database.NotificationEntity
+import java.util.Date
 
-class MyFirebaseMessagingService : FirebaseMessagingService() {
+class FirebaseNotificationService : FirebaseMessagingService() {
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
@@ -19,12 +27,10 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
-        Log.d("MyFirebaseMessageService", "From: ${remoteMessage.from}")
-
         remoteMessage.notification?.let {
-            Log.d("MyFirebaseMessageService", "Message Notification Title: ${it.title}")
-            Log.d("MyFirebaseMessageService", "Message Notification Body: ${it.body}")
-            sendNotification(it.body ?: "No message found")
+            val message = it.body ?: "No message found"
+            sendNotification(message)
+            saveNotificationToDatabase(message)
         }
     }
 
@@ -49,5 +55,15 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         notificationManager.createNotificationChannel(channel)
 
         notificationManager.notify(0, notificationBuilder.build())
+    }
+
+    private fun saveNotificationToDatabase(message: String) {
+        val database = DatabaseProvider.getDatabase(applicationContext)
+        val notificationDao = database.notificationDao()
+        val notification = NotificationEntity(message = message, receivedAt = Date())
+
+        CoroutineScope(Dispatchers.IO).launch {
+            notificationDao.insert(notification)
+        }
     }
 }

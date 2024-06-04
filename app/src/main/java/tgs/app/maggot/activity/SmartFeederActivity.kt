@@ -1,4 +1,4 @@
-package tgs.app.maggot
+package tgs.app.maggot.activity
 
 import android.os.Bundle
 import android.widget.Toast
@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import tgs.app.maggot.R
 import tgs.app.maggot.databinding.ActivitySmartFeederBinding
 
 class SmartFeederActivity : AppCompatActivity() {
@@ -67,6 +68,8 @@ class SmartFeederActivity : AppCompatActivity() {
     }
 
     private fun updateButton() {
-        binding.btnSmartFeeder.background = if (isOn) ResourcesCompat.getDrawable(resources, R.drawable.bg_btn_on, null) else ResourcesCompat.getDrawable(resources, R.drawable.bg_btn_off, null)
+        binding.btnSmartFeeder.background = if (isOn) ResourcesCompat.getDrawable(resources,
+            R.drawable.bg_btn_on, null) else ResourcesCompat.getDrawable(resources,
+            R.drawable.bg_btn_off, null)
     }
 }

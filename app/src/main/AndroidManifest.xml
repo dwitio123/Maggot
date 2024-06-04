@@ -16,7 +16,7 @@
         tools:targetApi="31">
 
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name=".service.FirebaseNotificationService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
@@ -24,28 +24,28 @@
         </service>
 
         <activity
-            android:name=".NotifikasiActivity"
+            android:name=".activity.NotifikasiActivity"
             android:exported="false" />
         <activity
-            android:name=".PengeringActivity"
+            android:name=".activity.PengeringActivity"
             android:exported="false" />
         <activity
-            android:name=".SmartFeederActivity"
+            android:name=".activity.SmartFeederActivity"
             android:exported="false" />
         <activity
-            android:name=".BoxMaggotActivity"
+            android:name=".activity.BoxMaggotActivity"
             android:exported="false" />
         <activity
-            android:name=".RuangBudidayaActivity"
+            android:name=".activity.RuangBudidayaActivity"
             android:exported="false" />
         <activity
-            android:name=".CekSuhuActivity"
+            android:name=".activity.CekSuhuActivity"
             android:exported="false" />
         <activity
-            android:name=".AboutActivity"
+            android:name=".activity.AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,7 +54,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false" />
     </application>
 

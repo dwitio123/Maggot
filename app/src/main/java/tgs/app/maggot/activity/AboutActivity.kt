@@ -1,10 +1,11 @@
-package tgs.app.maggot
+package tgs.app.maggot.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import tgs.app.maggot.R
 import tgs.app.maggot.databinding.ActivityAboutBinding
 
 class AboutActivity : AppCompatActivity() {
