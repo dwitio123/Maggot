@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.PengeringActivity"
+    tools:context=".activity.PengusirHamaActivity"
     android:background="@color/primary">
 
     <ImageView
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/pengering_maggot"
+        android:text="@string/pengusir_hama"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -55,7 +55,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pengering"
+            android:text="@string/pengusir_hama"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -86,7 +86,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/proses_pengeringan"
+            android:text="@string/tidak_ada_pergerakan_hama"
             android:textSize="16sp" />
     </LinearLayout>
 

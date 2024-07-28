@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "246119017635",
-    "firebase_url": "https://maggot-aefeb-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "maggot-aefeb",
-    "storage_bucket": "maggot-aefeb.appspot.com"
+    "project_number": "891007919486",
+    "firebase_url": "https://maggot-83b8e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "maggot-83b8e",
+    "storage_bucket": "maggot-83b8e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:246119017635:android:62f6d0a34a2dceed6c6316",
+        "mobilesdk_app_id": "1:891007919486:android:f7437e621e5ac8ec4fbf2f",
         "android_client_info": {
           "package_name": "tgs.app.maggot"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyArWTAKYT4vL-cnfycLbBnCtdzOZolZ6WE"
+          "current_key": "AIzaSyCFGR1GdruE9p3ELXmHuvxBJX-6SVX_nnU"
         }
       ],
       "services": {

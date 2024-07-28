@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Maggot</string>
-    <string name="welcome_to_mr_maggot">Welcome to Mr. Maggot</string>
-    <string name="smart_feeder">Smart Feeder</string>
+    <string name="welcome_to_mr_maggot">Selamat Datang di Mr. Maggot</string>
+    <string name="smart_feeder">Pemberi Pakan Otomatis</string>
     <string name="cek_suhu">Cek Suhu</string>
     <string name="pengering">Pengering</string>
-    <string name="about">About</string>
+    <string name="about">Tentang</string>
     <string name="copyright_tgs_app">Copyright TGS App</string>
     <string name="notifikasi">Notifikasi</string>
     <string name="logo">Logo</string>
@@ -13,7 +13,7 @@
     <string name="ruang_budidaya">Ruang Budidaya</string>
     <string name="box_maggot_bsf">Box Maggot BSF</string>
     <string name="suhu_description"><![CDATA[Parameter suhu dan kelembaban  budidaya Maggot BSF \n\nBatas suhu 24℃ - 36℃ \nBatas kelembaban 60% - 70%]]></string>
-    <string name="about_mr_maggot">About Mr. Maggot</string>
+    <string name="about_mr_maggot">Tentang</string>
     <string name="zero">0</string>
     <string name="celcius">°C</string>
     <string name="percent">%</string>
@@ -27,4 +27,9 @@
     <string name="makanan_telah_diberikan">Makanan telah diberikan</string>
     <string name="terdeteksi_pergerakan_hama">Terdeteksi pergerakan hama</string>
     <string name="_20_mei_2024">20 Mei 2024</string>
+    <string name="bantuan">Bantuan</string>
+    <string name="help">Bantuan</string>
+    <string name="rat_repellent">Pengusir Hama</string>
+    <string name="pengusir_hama">Pengusir Hama</string>
+    <string name="tidak_ada_pergerakan_hama">Tidak ada pergerakan hama</string>
 </resources>

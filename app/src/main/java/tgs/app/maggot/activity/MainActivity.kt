@@ -77,8 +77,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, PengeringActivity::class.java))
         }
 
+        binding.cardPengusirHama.setOnClickListener {
+            startActivity(Intent(this@MainActivity, PengusirHamaActivity::class.java))
+        }
+
         binding.cardAbout.setOnClickListener{
             startActivity(Intent(this@MainActivity, AboutActivity::class.java))
+        }
+
+        binding.cardHelp.setOnClickListener{
+            startActivity(Intent(this@MainActivity, BantuanActivity::class.java))
         }
     }
 }
