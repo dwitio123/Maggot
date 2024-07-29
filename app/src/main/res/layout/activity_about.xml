@@ -144,7 +144,7 @@
                 android:id="@+id/txt_sipa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dwitio Ahmad Pranoto"
+                android:text="Syifa Nurul Aini"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -156,7 +156,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/tgs"
+                android:src="@drawable/sipa"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_sipa" />
@@ -166,7 +166,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="NIM: 2103332064"
+                android:text="NIM: 2103332020"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_sipa"
                 app:layout_constraintTop_toBottomOf="@+id/txt_sipa" />
@@ -207,7 +207,7 @@
                 android:id="@+id/txt_virgi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dwitio Ahmad Pranoto"
+                android:text="Virgie Aubrey Hemas Sianipar"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -219,7 +219,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/tgs"
+                android:src="@drawable/virji"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_virgi" />
@@ -229,10 +229,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="NIM: 2103332064"
+                android:text="NIM: 2103332085"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_virgi"
-                app:layout_constraintTop_toBottomOf="@+id/prodi_virgi" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_virgi" />
 
             <TextView
                 android:id="@+id/prodi_virgi"
@@ -242,7 +242,7 @@
                 android:text="Prodi: Telekomunikasi"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_virgi"
-                app:layout_constraintTop_toBottomOf="@+id/txt_virgi" />
+                app:layout_constraintTop_toBottomOf="@+id/nim_virgi" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -251,7 +251,7 @@
                 android:text="Jurusan: Teknik Elektro"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_virgi"
-                app:layout_constraintTop_toBottomOf="@+id/nim_virgi" />
+                app:layout_constraintTop_toBottomOf="@+id/prodi_virgi" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
