@@ -16,7 +16,6 @@ import tgs.app.maggot.R
 import tgs.app.maggot.databinding.ActivityBoxMaggotBinding
 
 class BoxMaggotActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityBoxMaggotBinding
     private lateinit var database: DatabaseReference
     private var isOn: Boolean = false
