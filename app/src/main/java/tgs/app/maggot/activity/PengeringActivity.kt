@@ -36,6 +36,16 @@ class PengeringActivity : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance().reference
 
+        database.child("pengering").child("suhuPengeringan").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val suhu = snapshot.getValue(Int::class.java) ?: 0
+                binding.tvSuhu.text = suhu.toString()
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@PengeringActivity, error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
+
         database.child("pengering").child("pengering").get().addOnSuccessListener {
             isOn = it.getValue(Boolean::class.java) ?: false
             updateButton()
