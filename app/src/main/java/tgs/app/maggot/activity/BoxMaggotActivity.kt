@@ -1,24 +1,33 @@
 package tgs.app.maggot.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import tgs.app.maggot.R
+import tgs.app.maggot.adapter.RiwayatAdapter
 import tgs.app.maggot.databinding.ActivityBoxMaggotBinding
+import tgs.app.maggot.model.RiwayatData
 
 class BoxMaggotActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityBoxMaggotBinding
-    private lateinit var database: DatabaseReference
     private var isOn: Boolean = false
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var riwayatAdapter: RiwayatAdapter
+    private val riwayatList = mutableListOf<RiwayatData>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,38 +43,81 @@ class BoxMaggotActivity : AppCompatActivity() {
             finish()
         }
 
-        database = FirebaseDatabase.getInstance().reference
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        riwayatAdapter = RiwayatAdapter(riwayatList)
+        recyclerView.adapter = riwayatAdapter
 
-        database.child("boxMaggot").child("suhu").addValueEventListener(object : ValueEventListener {
+        val database = FirebaseDatabase.getInstance()
+        val ref = database.getReference("boxMaggot")
+
+        ref.child("monitoring").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val suhu = snapshot.getValue(Int::class.java) ?: 0
-                binding.tvSuhu.text = suhu.toString()
+                riwayatList.clear()
+
+                // Iterate through each child under "monitoring"
+                for (dataSnapshot in snapshot.children) {
+                    val suhu = dataSnapshot.child("suhu").getValue(Double::class.java)
+                    val kelembaban = dataSnapshot.child("kelembaban").getValue(Double::class.java)
+
+                    // Create a MonitoringData object
+                    val monitoringData = RiwayatData(snapshot.key, suhu, kelembaban)
+                    riwayatList.add(monitoringData)
+                }
+
+                riwayatAdapter.notifyDataSetChanged()
+                // Handle the retrieved data
+                for (data in riwayatList) {
+                    Log.d("FirebaseData", "Suhu: ${data.suhu}, Kelembaban: ${data.kelembaban}")
+                }
             }
+
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@BoxMaggotActivity, error.message, Toast.LENGTH_SHORT).show()
+                Log.e("FirebaseData", "Failed to read data.", error.toException())
             }
         })
 
-        database.child("boxMaggot").child("kelembaban").addValueEventListener(object : ValueEventListener {
+        ref.child("monitoring").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val kelembaban = snapshot.getValue(Int::class.java) ?: 0
-                binding.tvKelembaban.text = kelembaban.toString()
+                // Iterate through each child under "monitoring"
+                for (childSnapshot in snapshot.children) {
+                    val key = childSnapshot.key
+                    val value = childSnapshot.child("suhu").getValue(Double::class.java)
+                    Log.d("FirebaseData", "Key: $key, suhu: $value")
+                    binding.tvSuhu.text = value.toString()
+                }
             }
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@BoxMaggotActivity, error.message, Toast.LENGTH_SHORT).show()
+                Log.e("FirebaseData", "Failed to read data.", error.toException())
             }
         })
 
-        database.child("boxMaggot").child("kipas").get().addOnSuccessListener {
+        ref.child("monitoring").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                // Iterate through each child under "monitoring"
+                for (childSnapshot in snapshot.children) {
+                    val key = childSnapshot.key
+                    val value = childSnapshot.child("kelembaban").getValue(Double::class.java)
+                    Log.d("FirebaseData", "Key: $key, kelembaban: $value")
+                    binding.tvKelembaban.text = value.toString()
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("FirebaseData", "Failed to read data.", error.toException())
+            }
+        })
+
+        ref.child("kipas").get().addOnSuccessListener {
             isOn = it.getValue(Boolean::class.java) ?: false
             updateButton()
         }
 
         binding.btnKipas.setOnClickListener {
             isOn = !isOn
-            database.child("boxMaggot").child("kipas").setValue(isOn)
+            ref.child("kipas").setValue(isOn)
             updateButton()
             Toast.makeText(this, if (isOn) "Kipas : ON" else "Kipas : OFF", Toast.LENGTH_SHORT).show()
+            if (isOn) { binding.txtKipas.text = "Kipas Menyala" } else { binding.txtKipas.text = "Kipas Mati" }
         }
     }
 

@@ -66,6 +66,7 @@ class PengeringActivity : AppCompatActivity() {
             database.child("pengering").child("pengering").setValue(isOn)
             updateButton()
             Toast.makeText(this, if (isOn) "Pengering : ON" else "Pengering : OFF", Toast.LENGTH_SHORT).show()
+            if (isOn) { binding.tvStatus.text = "Pengering Menyala" } else { binding.tvStatus.text = "Pengering Mati" }
         }
     }
 
