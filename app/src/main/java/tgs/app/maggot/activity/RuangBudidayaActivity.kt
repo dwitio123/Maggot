@@ -57,11 +57,12 @@ class RuangBudidayaActivity : AppCompatActivity() {
 
                 // Iterate through each child under "monitoring"
                 for (dataSnapshot in snapshot.children) {
+                    val timeStamp = dataSnapshot.child("timestamp").getValue(String::class.java)
                     val suhu = dataSnapshot.child("suhu").getValue(Double::class.java)
                     val kelembaban = dataSnapshot.child("kelembaban").getValue(Double::class.java)
 
                     // Create a MonitoringData object
-                    val monitoringData = RiwayatData(snapshot.key, suhu, kelembaban)
+                    val monitoringData = RiwayatData(timeStamp, suhu, kelembaban)
                     riwayatList.add(monitoringData)
                 }
 
