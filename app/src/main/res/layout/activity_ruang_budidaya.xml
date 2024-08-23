@@ -111,72 +111,46 @@
         app:layout_constraintStart_toEndOf="@+id/tvKelembaban"
         app:layout_constraintTop_toTopOf="@+id/tvKelembaban" />
 
-    <LinearLayout
-        android:id="@+id/btn_kipas"
-        android:layout_width="280dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/bg_btn_off"
-        android:elevation="20dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="280dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/card_green"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:importantForAccessibility="no"
-            android:src="@drawable/ic_power" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_margin="8dp"
+                android:gravity="center_horizontal"
+                android:text="@string/status_kondisi"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/kipas"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textAlignment="center" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/txt_kondisi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/suhu_dan_kelembaban_aman"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="280dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/card_green"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_kipas">
+            <TextView
+                android:id="@+id/txt_kipas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/kipas_menyala"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_margin="8dp"
-            android:gravity="center_horizontal"
-            android:text="@string/status_kondisi"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/suhu_dan_kelembaban_aman"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/txt_kipas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/kipas_tidak_menyala"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

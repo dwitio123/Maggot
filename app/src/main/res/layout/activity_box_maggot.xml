@@ -173,7 +173,7 @@
                 android:id="@+id/txt_kipas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/kipas_tidak_menyala"
+                android:text="@string/kipas_menyala"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold" />

@@ -107,23 +107,19 @@ class RuangBudidayaActivity : AppCompatActivity() {
             }
         })
 
+        ref.child("status").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                binding.txtKondisi.text = snapshot.value.toString()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@RuangBudidayaActivity, error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
+
         ref.child("kipas").get().addOnSuccessListener {
             isOn = it.getValue(Boolean::class.java) ?: false
-            updateButton()
+            if (isOn) binding.txtKipas.text = "Kipas menyala" else "Kipas mati"
         }
-
-        binding.btnKipas.setOnClickListener {
-            isOn = !isOn
-            ref.child("kipas").setValue(isOn)
-            updateButton()
-            Toast.makeText(this, if (isOn) "Kipas : ON" else "Kipas : OFF", Toast.LENGTH_SHORT).show()
-            if (isOn) { binding.txtKipas.text = "Kipas Menyala" } else { binding.txtKipas.text = "Kipas Mati" }
-        }
-    }
-
-    private fun updateButton() {
-        binding.btnKipas.background = if (isOn) ResourcesCompat.getDrawable(resources,
-            R.drawable.bg_btn_on, null) else ResourcesCompat.getDrawable(resources,
-            R.drawable.bg_btn_off, null)
     }
 }

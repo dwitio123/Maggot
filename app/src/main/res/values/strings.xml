@@ -20,7 +20,7 @@
     <string name="kipas">Kipas</string>
     <string name="status_kondisi">Status kondisi</string>
     <string name="suhu_dan_kelembaban_aman">Suhu dan kelembaban aman</string>
-    <string name="kipas_tidak_menyala">Kipas tidak menyala</string>
+    <string name="kipas_menyala">Kipas menyala</string>
     <string name="pengering_maggot">Pengering Maggot</string>
     <string name="proses_pengeringan">Proses pengeringan</string>
     <string name="cadangan_makanan">Cadangan makanan</string>
