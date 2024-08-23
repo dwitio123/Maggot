@@ -107,8 +107,19 @@ class BoxMaggotActivity : AppCompatActivity() {
             }
         })
 
+        ref.child("status").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                binding.txtKondisi.text = snapshot.value.toString()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@BoxMaggotActivity, error.message, Toast.LENGTH_SHORT).show()
+            }
+        })
+
         ref.child("kipas").get().addOnSuccessListener {
             isOn = it.getValue(Boolean::class.java) ?: false
+            if (isOn) binding.txtKipas.text = "Kipas menyala" else "Kipas mati"
             updateButton()
         }
 
@@ -117,7 +128,7 @@ class BoxMaggotActivity : AppCompatActivity() {
             ref.child("kipas").setValue(isOn)
             updateButton()
             Toast.makeText(this, if (isOn) "Kipas : ON" else "Kipas : OFF", Toast.LENGTH_SHORT).show()
-            if (isOn) { binding.txtKipas.text = "Kipas Menyala" } else { binding.txtKipas.text = "Kipas Mati" }
+            if (isOn) { binding.txtKipas.text = "Kipas menyala" } else { binding.txtKipas.text = "Kipas mati" }
         }
     }
 

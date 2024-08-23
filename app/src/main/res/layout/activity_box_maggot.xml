@@ -162,6 +162,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txt_kondisi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/suhu_dan_kelembaban_aman"
